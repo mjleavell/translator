@@ -87,7 +87,12 @@ const getFrench = () => {
     let inputText = document.getElementById('word-input').value;
     inputArr = inputText.toLowerCase().split(" ");
     printToDom(inputArr, 'word-output');
+    event.preventDefault();
 }
+
+const compareArrays = () => {
+
+};
 // PRINT TO DOM
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
