@@ -31,74 +31,54 @@ let inputArr = [];
 let frenchKeys = Object.keys(french);
 let frenchWords = Object.values(french);
 let frenchButton = document.getElementById('french-btn');
+let spanishButton = document.getElementById('spanish-btn');
+let germanButton = document.getElementById('german-btn');
 
-
-// INPUT ARRAY
-// const getInput = (inputId) => {
-//     inputText = document.getElementById(inputId).value;
-//     inputArr = inputText.toLowerCase().split(" ");
-//     console.log(inputArr);
-//     return inputArr;
-// }
-
-
-// const getFrench = () => {
-//     let outputString = "";
-//     let arrToTranslate = getInput('word-input');
-//     for (let i = 0; i < frenchKeys.length; i++) {
-//         for (let j = 0; j < arrToTranslate.length; j++) {
-//             if(french[frenchKeys[i]] === arrToTranslate[j]) {
-//                 console.log('true');
-//             } else {
-//                 console.log('false');
-//             }
-//         }
-//         output.innerHTML = outputString;
-//     }
-// }
-
-    
-
-// LOOPS THROUGH LANGUAGES AND COMPARES array to language object
-// const compare = (arrayInInput, lang) => {
-//         if (lang === arrayInInput[i]) {
-//             return true;
-//         } else if (){
-
-//         }
-//     }
-// }
-
-// BASIC BUTTON FUNCTIONALITY
-
-
-// let buttons = document.getElementById('buttons');
-
-// buttons.addEventListener("click", e => {
-//     if (e.target.id === "french-btn") {
-//         compare('french'); 
-//     } else if (e.target.id === "german-btn") {
-//         compare('german');
-//     } else {
-//         compare('spanish');
-//     }
-// });
-const getFrench = () => {
+// takes user input and turns it into an array
+const getInput = () => {
     let inputText = document.getElementById('word-input').value;
     inputArr = inputText.toLowerCase().split(" ");
-    printToDom(inputArr, 'word-output');
-    event.preventDefault();
+    console.log(inputArr);
+    return inputArr;
 }
 
-const compareArrays = () => {
 
-};
 // PRINT TO DOM
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
 }
 
+const getFrench = () => {
+    let output= "";
+    let arrToTranslate = getInput();
+    for (let i = 0; i < arrToTranslate.length; i++) {
+        output += french[arrToTranslate[i]] + " ";
+    }
+    printToDom(output, 'word-output');
+    event.preventDefault();
+}
+
+const getSpanish = () => {
+    let output= "";
+    let arrToTranslate = getInput();
+    for (let i = 0; i < arrToTranslate.length; i++) {
+        output += spanish[arrToTranslate[i]] + " ";
+    }
+    printToDom(output, 'word-output');
+    event.preventDefault();
+}
+const getGerman = () => {
+    let output= "";
+    let arrToTranslate = getInput();
+    for (let i = 0; i < arrToTranslate.length; i++) {
+        output += german[arrToTranslate[i]] + " ";
+    }
+    printToDom(output, 'word-output');
+    event.preventDefault();
+}
+
+// click events
 frenchButton.addEventListener("click", getFrench);
+spanishButton.addEventListener("click", getSpanish);
+germanButton.addEventListener("click", getGerman);
 
-
-// BUILD STRING TO PRINT IN DOM AKA translationStringBuilding
