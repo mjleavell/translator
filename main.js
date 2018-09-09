@@ -6,7 +6,7 @@ const french = {
     "new": "nouveau",
     "year": "an"
 };
- 
+
 const german = {
     "merry": "fröhlich",
     "christmas": "weihnachten",
@@ -25,7 +25,7 @@ const spanish = {
     "year": "ano"
 };
 
- // VARIABLES
+// VARIABLES
 let inputText = "";
 let inputArr = [];
 let frenchKeys = Object.keys(french);
@@ -34,6 +34,7 @@ let frenchButton = document.getElementById('french-btn');
 let spanishButton = document.getElementById('spanish-btn');
 let germanButton = document.getElementById('german-btn');
 
+
  // takes user input and turns it into an array
 const getInput = () => {
     let inputText = document.getElementById('word-input').value;
@@ -41,13 +42,15 @@ const getInput = () => {
     console.log(inputArr);
     return inputArr;
 }
- // PRINT TO DOM
+
+// PRINT TO DOM
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
 }
 
+
 // TRANSLATION FUNCTIONS
- const getFrench = () => {
+const getFrench = () => {
     let output= "";
     let arrToTranslate = getInput();
     for (let i = 0; i < arrToTranslate.length; i++) {
@@ -56,7 +59,8 @@ const printToDom = (stringToPrint, divId) => {
     printToDom(output, 'word-output');
     event.preventDefault();
 }
- const getSpanish = () => {
+
+const getSpanish = () => {
     let output= "";
     let arrToTranslate = getInput();
     for (let i = 0; i < arrToTranslate.length; i++) {
@@ -65,6 +69,7 @@ const printToDom = (stringToPrint, divId) => {
     printToDom(output, 'word-output');
     event.preventDefault();
 }
+
 const getGerman = () => {
     let output= "";
     let arrToTranslate = getInput();
