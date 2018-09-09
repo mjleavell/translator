@@ -34,7 +34,8 @@ let frenchButton = document.getElementById('french-btn');
 let spanishButton = document.getElementById('spanish-btn');
 let germanButton = document.getElementById('german-btn');
 
-// takes user input and turns it into an array
+
+ // takes user input and turns it into an array
 const getInput = () => {
     let inputText = document.getElementById('word-input').value;
     inputArr = inputText.toLowerCase().split(" ");
@@ -42,12 +43,13 @@ const getInput = () => {
     return inputArr;
 }
 
-
 // PRINT TO DOM
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
 }
 
+
+// TRANSLATION FUNCTIONS
 const getFrench = () => {
     let output= "";
     let arrToTranslate = getInput();
@@ -67,6 +69,7 @@ const getSpanish = () => {
     printToDom(output, 'word-output');
     event.preventDefault();
 }
+
 const getGerman = () => {
     let output= "";
     let arrToTranslate = getInput();
@@ -77,8 +80,7 @@ const getGerman = () => {
     event.preventDefault();
 }
 
-// click events
+ // CLICK EVENTS
 frenchButton.addEventListener("click", getFrench);
 spanishButton.addEventListener("click", getSpanish);
 germanButton.addEventListener("click", getGerman);
-
