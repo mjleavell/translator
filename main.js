@@ -82,9 +82,8 @@ const frenchFinalOutput = () => {
     let outputString = "";
     let frenchString = getFrench();
     for (let i = 0; i < frenchString.length; i++) {
-        if (frenchString === "undefined ") {
+        if (frenchString.includes(undefined)) {
             outputString = `Sorry! The word you entered is not in my vocabulary.`;
-
         } else {
             outputString = `Translation: ${frenchString}`;
         }
@@ -97,9 +96,8 @@ const spanishFinalOutput = () => {
     let outputString = "";
     let spanishString = getSpanish();
     for (let i = 0; i < spanishString.length; i++) {
-        if (spanishString === "undefined ") {
+        if (spanishString.includes(undefined)) {
             outputString = `Sorry! The word you entered is not in my vocabulary.`;
-
         } else {
             outputString = `Translation: ${spanishString}`;
         }
@@ -112,9 +110,8 @@ const germanFinalOutput = () => {
     let outputString = "";
     let germanString = getGerman();
     for (let i = 0; i < germanString.length; i++) {
-        if (germanString === "undefined ") {
+        if (germanString.includes(undefined)) {
             outputString = `Sorry! The word you entered is not in my vocabulary.`;
-
         } else {
             outputString = `Translation: ${germanString}`;
         }
