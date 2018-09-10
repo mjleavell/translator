@@ -56,8 +56,7 @@ const getFrench = () => {
     for (let i = 0; i < arrToTranslate.length; i++) {
         output += french[arrToTranslate[i]] + " ";
     }
-    printToDom(output, 'word-output');
-    event.preventDefault();
+    return output;
 }
 
 const getSpanish = () => {
@@ -66,21 +65,66 @@ const getSpanish = () => {
     for (let i = 0; i < arrToTranslate.length; i++) {
         output += spanish[arrToTranslate[i]] + " ";
     }
-    printToDom(output, 'word-output');
-    event.preventDefault();
+    return output;
 }
 
 const getGerman = () => {
     let output= "";
     let arrToTranslate = getInput();
     for (let i = 0; i < arrToTranslate.length; i++) {
-        output += german[arrToTranslate[i]] + " ";
+            output += german[arrToTranslate[i]] + " ";
     }
-    printToDom(output, 'word-output');
+    return output;
+}
+
+// ERROR AND FINAL STRING PRINT
+const frenchFinalOutput = () => {
+    let outputString = "";
+    let frenchString = getFrench();
+    for (let i = 0; i < frenchString.length; i++) {
+        if (frenchString === "undefined ") {
+            outputString = `Sorry! The word you entered is not in my vocabulary.`;
+
+        } else {
+            outputString = `Translation: ${frenchString}`;
+        }
+    }
+    printToDom(outputString, 'word-output');
     event.preventDefault();
 }
 
+const spanishFinalOutput = () => {
+    let outputString = "";
+    let spanishString = getSpanish();
+    for (let i = 0; i < spanishString.length; i++) {
+        if (spanishString === "undefined ") {
+            outputString = `Sorry! The word you entered is not in my vocabulary.`;
+
+        } else {
+            outputString = `Translation: ${spanishString}`;
+        }
+    }
+    printToDom(outputString, 'word-output');
+    event.preventDefault();
+}
+
+const germanFinalOutput = () => {
+    let outputString = "";
+    let germanString = getGerman();
+    for (let i = 0; i < germanString.length; i++) {
+        if (germanString === "undefined ") {
+            outputString = `Sorry! The word you entered is not in my vocabulary.`;
+
+        } else {
+            outputString = `Translation: ${germanString}`;
+        }
+    }
+    printToDom(outputString, 'word-output');
+    event.preventDefault();
+}
+
+
  // CLICK EVENTS
-frenchButton.addEventListener("click", getFrench);
-spanishButton.addEventListener("click", getSpanish);
-germanButton.addEventListener("click", getGerman);
+frenchButton.addEventListener("click", frenchFinalOutput);
+spanishButton.addEventListener("click", spanishFinalOutput);
+germanButton.addEventListener("click", germanFinalOutput);
