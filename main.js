@@ -90,6 +90,9 @@ const frenchFinalOutput = () => {
     }
     printToDom(outputString, 'word-output');
     event.preventDefault();
+    let msg = new SpeechSynthesisUtterance(outputString);
+    msg.lang = 'fr-FR'
+    window.speechSynthesis.speak(msg);
 }
 
 const spanishFinalOutput = () => {
@@ -104,6 +107,9 @@ const spanishFinalOutput = () => {
     }
     printToDom(outputString, 'word-output');
     event.preventDefault();
+    let msg = new SpeechSynthesisUtterance(outputString);
+    msg.lang = 'es-ES'    
+    window.speechSynthesis.speak(msg);
 }
 
 const germanFinalOutput = () => {
@@ -118,6 +124,9 @@ const germanFinalOutput = () => {
     }
     printToDom(outputString, 'word-output');
     event.preventDefault();
+    let msg = new SpeechSynthesisUtterance(outputString);
+    msg.lang = 'de-DE'    
+    window.speechSynthesis.speak(msg);
 }
 
 
